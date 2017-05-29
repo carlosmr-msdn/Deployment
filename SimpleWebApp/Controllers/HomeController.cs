@@ -11,10 +11,12 @@ namespace SimpleWebApp.Controllers
     {
         public ActionResult Index()
         {
-            var s01 = CloudConfigurationManager.GetSetting("Setting01");
-            var s02 = CloudConfigurationManager.GetSetting("Setting02");
-            var s03 = CloudConfigurationManager.GetSetting("Setting03");
-            ViewBag.Message = $"Parámetros: {s01} , {s02}, {s03} "; 
+            string[] s = new string[3];
+            s[0] = CloudConfigurationManager.GetSetting("Setting01");
+            s[1] = CloudConfigurationManager.GetSetting("Setting02");
+            s[2] = CloudConfigurationManager.GetSetting("Setting03");
+            ViewBag.Parametros = s;
+            
            
                 
             return View();
