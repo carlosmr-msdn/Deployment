@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Azure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,12 @@ namespace SimpleWebApp.Controllers
     {
         public ActionResult Index()
         {
+            var s01 = CloudConfigurationManager.GetSetting("Setting01");
+            var s02 = CloudConfigurationManager.GetSetting("Setting02");
+            var s03 = CloudConfigurationManager.GetSetting("Setting03");
+            ViewBag.Message = $"Parámetros: {s01} , {s02}, {s03} "; 
+           
+                
             return View();
         }
 
